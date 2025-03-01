@@ -5054,7 +5054,7 @@
       function sendRequest() {
         $("#main-loader").css("visibility", "visible");
         $.ajax({
-          url: "http://localhost:3000/api",
+          url: "https://cyckxjjpzjjqrrxteozc.supabase.co/functions/v1/proxy-server",
           type: "POST",
           contentType: "application/json",
           crossDomain: true,
@@ -5064,14 +5064,26 @@
             contact: $("#input_contact").val(),
             nopax: $("#input_nopax").val(),
           }),
-        }).done(function (data) {
-          if (data?.status == "success") {
-            alert("Your RSVP has been submitted, Thank You");
-          } else {
+        })
+          .done(function (data) {
+            if (data?.status == "success") {
+              $(".f-input-wrap input").val("");
+              $("#attend_select").val("").change();
+              alert("Your RSVP has been submitted, Thank You");
+            } else {
+              alert(
+                "Unable to submit your RSVP, please try again later. Sorry"
+              );
+            }
+            $("#main-loader").css("visibility", "hide");
+          })
+          .fail(function (jqXHR, textStatus, errorThrown) {
+            $("#main-loader").css("visibility", "hide");
             alert("Unable to submit your RSVP, please try again later. Sorry");
-          }
-          $("#main-loader").css("visibility", "hide");
-        });
+          })
+          .always(function () {
+            $("#main-loader").css("visibility", "hidden"); // Hide loader after request
+          });
       }
     </script>
   </body>
