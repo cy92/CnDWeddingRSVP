@@ -1,0 +1,525 @@
+#main-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.flip-clock-wrapper {
+    transform: scale(0.85);
+    transform-origin: center;
+    margin-top: 30px;
+  }
+  .flip-clock-divider .flip-clock-label {
+    color: #fff;
+    font-size: 12px !important;
+  }
+  .flip-clock-wrapper ul li div div.inn {
+    font-size: 35px !important;
+    color: #fff !important;
+  }
+  .flip-clock-wrapper ul {
+    width: 28px !important;
+    height: 62px !important;
+    margin: 2px !important;
+  }
+  .flip-clock-divider {
+    height: 80px !important;
+  }
+  .flip-clock-divider .flip-clock-label {
+    right: -50px;
+  }
+  .flip-clock-divider.minutes .flip-clock-label {
+    right: -52px;
+  }
+  .flip-clock-divider.minutes .flip-clock-label {
+    right: -52px;
+  }
+  .flip-clock-divider.seconds .flip-clock-label {
+    right: -50px;
+  }
+  .flip-clock-dot {
+    width: 8px;
+    height: 8px;
+  }
+  .flip-clock-dot.top {
+    top: 35px;
+  }
+  .flip-clock-dot.bottom {
+    bottom: 22px;
+  }
+  .flip-clock-dot {
+    background-color: #fff;
+  }
+  .liuhuankatongshoushu {
+    font-family: "liuhuankatongshoushu_1", "liuhuankatongshoushu_2",
+      "liuhuankatongshoushu" !important;
+  }
+  .SourceHanSerifSC-Heavy {
+    font-family: "SourceHanSerifSC-Heavy_1", "SourceHanSerifSC-Heavy_2",
+      "SourceHanSerifSC-Heavy" !important;
+  }
+  .muyaosuixin {
+    font-family: "muyaosuixin_1", "muyaosuixin_2", "muyaosuixin" !important;
+  }
+  .baotuxiaobaiti {
+    font-family: "baotuxiaobaiti_1", "baotuxiaobaiti_2", "baotuxiaobaiti" !important;
+  }
+  .pangmenzhengdaoqingsongti {
+    font-family: "pangmenzhengdaoqingsongti_1",
+      "pangmenzhengdaoqingsongti_2", "pangmenzhengdaoqingsongti" !important;
+  }
+  .yuanyuantixingshu {
+    font-family: "yuanyuantixingshu_1", "yuanyuantixingshu_2",
+      "yuanyuantixingshu" !important;
+  }
+  .zhankucangeryuyangtiW01 {
+    font-family: "zhankucangeryuyangtiW01_1", "zhankucangeryuyangtiW01_2",
+      "zhankucangeryuyangtiW01" !important;
+  }
+  .zhankucangeryuyangtiW04 {
+    font-family: "zhankucangeryuyangtiW04_1", "zhankucangeryuyangtiW04_2",
+      "zhankucangeryuyangtiW04" !important;
+  }
+  .zhengqingkehuangyouti {
+    font-family: "zhengqingkehuangyouti_1", "zhengqingkehuangyouti_2",
+      "zhengqingkehuangyouti" !important;
+  }
+  .zhulangmengyazi {
+    font-family: "zhulangmengyazi_1", "zhulangmengyazi_2", "zhulangmengyazi" !important;
+  }
+  .XianErTi-2 {
+    font-family: "XianErTi-2_1", "XianErTi-2_2", "XianErTi-2" !important;
+  }
+  .CHERRYBOMBONE-REGULAR {
+    font-family: "CHERRYBOMBONE-REGULAR_1", "CHERRYBOMBONE-REGULAR_2",
+      "CHERRYBOMBONE-REGULAR" !important;
+  }
+  .MODAK-REGULAR {
+    font-family: "MODAK-REGULAR_1", "MODAK-REGULAR_2", "MODAK-REGULAR" !important;
+  }
+  .huxiaobozhenshuaiti {
+    font-family: "huxiaobozhenshuaiti_1", "huxiaobozhenshuaiti_2",
+      "huxiaobozhenshuaiti" !important;
+  }
+  .pangmenzhengdaobiaotiti {
+    font-family: "pangmenzhengdaobiaotiti_1", "pangmenzhengdaobiaotiti_2",
+      "pangmenzhengdaobiaotiti" !important;
+  }
+  .pangmenzhengdaocushuti {
+    font-family: "pangmenzhengdaocushuti_1", "pangmenzhengdaocushuti_2",
+      "pangmenzhengdaocushuti" !important;
+  }
+  .yangrendong-Light {
+    font-family: "yangrendong-Light_1", "yangrendong-Light_2",
+      "yangrendong-Light" !important;
+  }
+  .yangrendong-Medium {
+    font-family: "yangrendong-Medium_1", "yangrendong-Medium_2",
+      "yangrendong-Medium" !important;
+  }
+  .zhankuheikuti {
+    font-family: "zhankuheikuti_1", "zhankuheikuti_2", "zhankuheikuti" !important;
+  }
+  .zhankuxiaoweilogoti {
+    font-family: "zhankuxiaoweilogoti_1", "zhankuxiaoweilogoti_2",
+      "zhankuxiaoweilogoti" !important;
+  }
+  .Westhouse {
+    font-family: "Westhouse_1", "Westhouse_2", "Westhouse" !important;
+  }
+  .WanoQuinFR-Thin {
+    font-family: "WanoQuinFR-Thin_1", "WanoQuinFR-Thin_2", "WanoQuinFR-Thin" !important;
+  }
+  .Valden {
+    font-family: "Valden_1", "Valden_2", "Valden" !important;
+  }
+  .Tahu {
+    font-family: "Tahu_1", "Tahu_2", "Tahu" !important;
+  }
+  .Striverx {
+    font-family: "Striverx_1", "Striverx_2", "Striverx" !important;
+  }
+  .SeasideResortNF {
+    font-family: "SeasideResortNF_1", "SeasideResortNF_2", "SeasideResortNF" !important;
+  }
+  .SAF {
+    font-family: "SAF_1", "SAF_2", "SAF" !important;
+  }
+  .pomo {
+    font-family: "pomo_1", "pomo_2", "pomo" !important;
+  }
+  .PeaceSans {
+    font-family: "PeaceSans_1", "PeaceSans_2", "PeaceSans" !important;
+  }
+  .NewYork {
+    font-family: "NewYork_1", "NewYork_2", "NewYork" !important;
+  }
+  .MetaphorBold {
+    font-family: "MetaphorBold_1", "MetaphorBold_2", "MetaphorBold" !important;
+  }
+  .LettownHillsItalic {
+    font-family: "LettownHillsItalic_1", "LettownHillsItalic_2",
+      "LettownHillsItalic" !important;
+  }
+  .Hudzaifah {
+    font-family: "Hudzaifah_1", "Hudzaifah_2", "Hudzaifah" !important;
+  }
+  .hongleixingshu {
+    font-family: "hongleixingshu_1", "hongleixingshu_2", "hongleixingshu" !important;
+  }
+  .Evelyne {
+    font-family: "Evelyne_1", "Evelyne_2", "Evelyne" !important;
+  }
+  .branic {
+    font-family: "branic_1", "branic_2", "branic" !important;
+  }
+  .Airfool {
+    font-family: "Airfool_1", "Airfool_2", "Airfool" !important;
+  }
+  .aajianhaoti {
+    font-family: "aajianhaoti_1", "aajianhaoti_2", "aajianhaoti" !important;
+  }
+  .zhiyongshoushuti {
+    font-family: "zhiyongshoushuti_1", "zhiyongshoushuti_2",
+      "zhiyongshoushuti" !important;
+  }
+  .yousheshayufeitejiankangti {
+    font-family: "yousheshayufeitejiankangti_1",
+      "yousheshayufeitejiankangti_2", "yousheshayufeitejiankangti" !important;
+  }
+  .jinnanmaiyuanti {
+    font-family: "jinnanmaiyuanti_1", "jinnanmaiyuanti_2", "jinnanmaiyuanti" !important;
+  }
+  .bailuqiaolishouxieti {
+    font-family: "bailuqiaolishouxieti_1", "bailuqiaolishouxieti_2",
+      "bailuqiaolishouxieti" !important;
+  }
+  .azhupaopaoti {
+    font-family: "azhupaopaoti_1", "azhupaopaoti_2", "azhupaopaoti" !important;
+  }
+  .sucaijishikangkangti {
+    font-family: "sucaijishikangkangti_1", "sucaijishikangkangti_2",
+      "sucaijishikangkangti" !important;
+  }
+  .wendingpljianzhongkai {
+    font-family: "wendingpljianzhongkai_1", "wendingpljianzhongkai_2",
+      "wendingpljianzhongkai" !important;
+  }
+  .maokenwangfengyasong {
+    font-family: "maokenwangfengyasong_1", "maokenwangfengyasong_2",
+      "maokenwangfengyasong" !important;
+  }
+  .huiwenzhengkai {
+    font-family: "huiwenzhengkai_1", "huiwenzhengkai_2", "huiwenzhengkai" !important;
+  }
+  .hanyiwanfengsong {
+    font-family: "hanyiwanfengsong_1", "hanyiwanfengsong_2",
+      "hanyiwanfengsong" !important;
+  }
+  .Aalinlansong {
+    font-family: "Aalinlansong_1", "Aalinlansong_2", "Aalinlansong" !important;
+  }
+  .PingFangSaTuoTi-2 {
+    font-family: "PingFangSaTuoTi-2_1", "PingFangSaTuoTi-2_2",
+      "PingFangSaTuoTi-2" !important;
+  }
+  .tangyuanti {
+    font-family: "tangyuanti_1", "tangyuanti_2", "tangyuanti" !important;
+  }
+  .siyuansongtijixi {
+    font-family: "siyuansongtijixi_1", "siyuansongtijixi_2",
+      "siyuansongtijixi" !important;
+  }
+  .siyuansongtichanggui {
+    font-family: "siyuansongtichanggui_1", "siyuansongtichanggui_2",
+      "siyuansongtichanggui" !important;
+  }
+  .siyuanheitijixi {
+    font-family: "siyuanheitijixi_1", "siyuanheitijixi_2", "siyuanheitijixi" !important;
+  }
+  .siyuanheitichanggui {
+    font-family: "siyuanheitichanggui_1", "siyuanheitichanggui_2",
+      "siyuanheitichanggui" !important;
+  }
+  .qianmo {
+    font-family: "qianmo_1", "qianmo_2", "qianmo" !important;
+  }
+  .muyao {
+    font-family: "muyao_1", "muyao_2", "muyao" !important;
+  }
+  .bifeng {
+    font-family: "bifeng_1", "bifeng_2", "bifeng" !important;
+  }
+  .montserrat {
+    font-family: "montserrat_1", "montserrat_2", "montserrat" !important;
+  }
+  .fluids {
+    font-family: "fluids_1", "fluids_2", "fluids" !important;
+  }
+  .seaside {
+    font-family: "seaside_1", "seaside_2", "seaside" !important;
+  }
+  .romance {
+    font-family: "romance_1", "romance_2", "romance" !important;
+  }
+  .kaushan {
+    font-family: "kaushan_1", "kaushan_2", "kaushan" !important;
+  }
+  .shuyuan {
+    font-family: "shuyuan_1", "shuyuan_2", "shuyuan" !important;
+  }
+  .zzqxmt {
+    font-family: "zzqxmt_1", "zzqxmt_2", "zzqxmt" !important;
+  }
+  .ztqxylgt {
+    font-family: "ztqxylgt_1", "ztqxylgt_2", "ztqxylgt" !important;
+  }
+  .zkgdht {
+    font-family: "zkgdht_1", "zkgdht_2", "zkgdht" !important;
+  }
+  .zkqkhyt {
+    font-family: "zkqkhyt_1", "zkqkhyt_2", "zkqkhyt" !important;
+  }
+  .zjgljt {
+    font-family: "zjgljt_1", "zjgljt_2", "zjgljt" !important;
+  }
+  .yxbth {
+    font-family: "yxbth_1", "yxbth_2", "yxbth" !important;
+  }
+  .ysyrxk {
+    font-family: "ysyrxk_1", "ysyrxk_2", "ysyrxk" !important;
+  }
+  .ysxhk {
+    font-family: "ysxhk_1", "ysxhk_2", "ysxhk" !important;
+  }
+  .qssxt {
+    font-family: "qssxt_1", "qssxt_2", "qssxt" !important;
+  }
+  .myrbsxt {
+    font-family: "myrbsxt_1", "myrbsxt_2", "myrbsxt" !important;
+  }
+  .cexwz {
+    font-family: "cexwz_1", "cexwz_2", "cexwz" !important;
+  }
+  .crfbw04 {
+    font-family: "crfbw04_1", "crfbw04_2", "crfbw04" !important;
+  }
+  .alibbapht {
+    font-family: "alibbapht_1", "alibbapht_2", "alibbapht" !important;
+  }
+  .SilenceRocken {
+    font-family: "SilenceRocken_1", "SilenceRocken_2", "SilenceRocken" !important;
+  }
+  .Pomidor {
+    font-family: "Pomidor_1", "Pomidor_2", "Pomidor" !important;
+  }
+  .Playball-Regular {
+    font-family: "Playball-Regular_1", "Playball-Regular_2",
+      "Playball-Regular" !important;
+  }
+  .Pacifico {
+    font-family: "Pacifico_1", "Pacifico_2", "Pacifico" !important;
+  }
+  .Montserrat-SemiBold {
+    font-family: "Montserrat-SemiBold_1", "Montserrat-SemiBold_2",
+      "Montserrat-SemiBold" !important;
+  }
+  .Misto {
+    font-family: "Misto_1", "Misto_2", "Misto" !important;
+  }
+  .MAXWELL-Light {
+    font-family: "MAXWELL-Light_1", "MAXWELL-Light_2", "MAXWELL-Light" !important;
+  }
+  .Margarine {
+    font-family: "Margarine_1", "Margarine_2", "Margarine" !important;
+  }
+  .Maler {
+    font-family: "Maler_1", "Maler_2", "Maler" !important;
+  }
+  .Lobster {
+    font-family: "Lobster_1", "Lobster_2", "Lobster" !important;
+  }
+  .Kallem {
+    font-family: "Kallem_1", "Kallem_2", "Kallem" !important;
+  }
+  .dancing {
+    font-family: "dancing_1", "dancing_2", "dancing" !important;
+  }
+  .Cookie {
+    font-family: "Cookie_1", "Cookie_2", "Cookie" !important;
+  }
+  .Cinzel-Regular {
+    font-family: "Cinzel-Regular_1", "Cinzel-Regular_2", "Cinzel-Regular" !important;
+  }
+  .Cinzel-Bold {
+    font-family: "Cinzel-Bold_1", "Cinzel-Bold_2", "Cinzel-Bold" !important;
+  }
+  .Cinzel-Black {
+    font-family: "Cinzel-Black_1", "Cinzel-Black_2", "Cinzel-Black" !important;
+  }
+  .Caveat {
+    font-family: "Caveat_1", "Caveat_2", "Caveat" !important;
+  }
+  .BOXING {
+    font-family: "BOXING_1", "BOXING_2", "BOXING" !important;
+  }
+  .BalooChettan {
+    font-family: "BalooChettan_1", "BalooChettan_2", "BalooChettan" !important;
+  }
+  .AreYouOkay {
+    font-family: "AreYouOkay_1", "AreYouOkay_2", "AreYouOkay" !important;
+  }
+  .AlexBrush {
+    font-family: "AlexBrush_1", "AlexBrush_2", "AlexBrush" !important;
+  }
+  .Aemstel-LineOutside {
+    font-family: "Aemstel-LineOutside_1", "Aemstel-LineOutside_2",
+      "Aemstel-LineOutside" !important;
+  }
+  .Daizen {
+    font-family: "Daizen_1", "Daizen_2", "Daizen" !important;
+  }
+  .Corben-Bold {
+    font-family: "Corben-Bold_1", "Corben-Bold_2", "Corben-Bold" !important;
+  }
+  .waitingforthesunrise {
+    font-family: "waitingforthesunrise_1", "waitingforthesunrise_2",
+      "waitingforthesunrise" !important;
+  }
+  .monsieurladoulaise {
+    font-family: "monsieurladoulaise_1", "monsieurladoulaise_2",
+      "monsieurladoulaise" !important;
+  }
+  .meiescript {
+    font-family: "meiescript_1", "meiescript_2", "meiescript" !important;
+  }
+  .sacramento {
+    font-family: "sacramento_1", "sacramento_2", "sacramento" !important;
+  }
+  .vffree {
+    font-family: "vffree_1", "vffree_2", "vffree" !important;
+  }
+  .poiretone {
+    font-family: "poiretone_1", "poiretone_2", "poiretone" !important;
+  }
+  .monoton {
+    font-family: "monoton_1", "monoton_2", "monoton" !important;
+  }
+  .addictitalic {
+    font-family: "addictitalic_1", "addictitalic_2", "addictitalic" !important;
+  }
+  .greatvibes {
+    font-family: "greatvibes_1", "greatvibes_2", "greatvibes" !important;
+  }
+  .amaticd {
+    font-family: "amaticd_1", "amaticd_2", "amaticd" !important;
+  }
+  .cabinsketch {
+    font-family: "cabinsketch_1", "cabinsketch_2", "cabinsketch" !important;
+  }
+  .zhankuwenyi {
+    font-family: "zhankuwenyi_1", "zhankuwenyi_2", "zhankuwenyi" !important;
+  }
+  .youshe {
+    font-family: "youshe_1", "youshe_2", "youshe" !important;
+  }
+  .zhankuyuyang {
+    font-family: "zhankuyuyang_1", "zhankuyuyang_2", "zhankuyuyang" !important;
+  }
+  .tchj {
+    font-family: "tchj_1", "tchj_2", "tchj" !important;
+  }
+  .rzzy {
+    font-family: "rzzy_1", "rzzy_2", "rzzy" !important;
+  }
+  .klt {
+    font-family: "klt_1", "klt_2", "klt" !important;
+  }
+  .xwzt {
+    font-family: "xwzt_1", "xwzt_2", "xwzt" !important;
+  }
+  .ajt {
+    font-family: "ajt_1", "ajt_2", "ajt" !important;
+  }
+  .jiandan {
+    font-family: "jiandan_1", "jiandan_2", "jiandan" !important;
+  }
+  .puhui {
+    font-family: "puhui_1", "puhui_2", "puhui" !important;
+  }
+  .sirui {
+    font-family: "sirui_1", "sirui_2", "sirui" !important;
+  }
+  .fangsong {
+    font-family: "fangsong_1", "fangsong_2", "fangsong" !important;
+  }
+  .kaiti {
+    font-family: "kaiti_1", "kaiti_2", "kaiti" !important;
+  }
+  .xinheiti {
+    font-family: "xinheiti_1", "xinheiti_2", "xinheiti" !important;
+  }
+  .xinsongti {
+    font-family: "xinsongti_1", "xinsongti_2", "xinsongti" !important;
+  }
+  .xinyahei {
+    font-family: "xinyahei_1", "xinyahei_2", "xinyahei" !important;
+  }
+  @font-face {
+    font-family: siyuansongtichanggui_1;
+    src: url(../font/1fe3fc254833d961c7e590c88192ea78-1740490237290-font-1.ttf);
+  }
+  @font-face {
+    font-family: siyuansongtichanggui_2;
+    src: url(../font/f023a7ef6e8ca3a8a614943b43ef1d6c-1740490237291-font-2.ttf);
+  }
+  @font-face {
+    font-family: MAXWELL-Light_1;
+    src: url(../font/771df7e051f2e936ed45ffa0f5d7263a-1740489999198-font-1.ttf);
+  }
+  @font-face {
+    font-family: MAXWELL-Light_2;
+    src: url(../font/7f38a4c73b897d15b7766e4bdc8b6b69-1740489999199-font-2.ttf);
+  }
+  @font-face {
+    font-family: siyuansongtijixi_1;
+    src: url(../font/1d6196859789f3d4c30febbd109b38f2-1740489674709-font-1.ttf);
+  }
+  @font-face {
+    font-family: siyuansongtijixi_2;
+    src: url(../font/42a9d16236e32497309316c2b94a7302-1740489674709-font-2.ttf);
+  }
+  @font-face {
+    font-family: qssxt_2;
+    src: url(../font/c0735437f0c0419e41e927f9739b9f48-1740490237292-font-2.ttf);
+  }
+  @font-face {
+    font-family: Aalinlansong_2;
+    src: url(../font/db6c071aad92d67e834b0358be3c7461-1740489778712-font-2.ttf);
+  }
