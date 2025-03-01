@@ -71,9 +71,9 @@
                       opacity: 1;
                       font-size: 0rem;
                       font-family: 微软雅黑;
-                      left: -0.10667rem;
+                      left: 0;
                       top: 58.1642rem;
-                      width: 10.24rem;
+                      width: 100%;
                       height: 21.4933rem;
                       transform: rotate(0deg);
                     "
@@ -228,7 +228,7 @@
                             style="
                               opacity: 1;
                               top: -23.219px;
-                              width: 479px;
+                              width: 98%;
                               height: 269.461px;
                             "
                           />
@@ -248,9 +248,9 @@
                     imgmattinginfo="[object Object]"
                     overturntypenew="0"
                     style="
-                      left: -0.10667rem;
+                      left: 0;
                       top: 0rem;
-                      width: 10.08rem;
+                      width: 100%;
                       height: 24.9333rem;
                       transform: rotate(0deg);
                     "
@@ -284,7 +284,7 @@
                               opacity: 1;
                               left: -0.045px;
                               height: 935px;
-                              width: 378.141px;
+                              width: 100%;
                             "
                           />
                         </div>
@@ -704,9 +704,9 @@
                     imgmattinginfo="[object Object]"
                     overturntypenew="0"
                     style="
-                      left: -0.10667rem;
+                      left: 0;
                       top: 58.0309rem;
-                      width: 10.2133rem;
+                      width: 100%;
                       height: 19.0133rem;
                       transform: rotate(0deg);
                     "
@@ -759,9 +759,9 @@
                     overturntypenew="0"
                     copyindex="14"
                     style="
-                      left: 0.64rem;
+                      left: 0.84rem;
                       top: 58.5909rem;
-                      width: 8.72rem;
+                      width: 82%;
                       height: 5.70667rem;
                       transform: rotate(0deg);
                     "
@@ -793,7 +793,7 @@
                             style="
                               opacity: 1;
                               top: -1.83px;
-                              width: 327px;
+                              width: 100%;
                               height: 217.68px;
                             "
                           />
@@ -848,7 +848,7 @@
                             style="
                               opacity: 1;
                               top: -3.179px;
-                              width: 327px;
+                              width: 100%;
                               height: 220.33px;
                             "
                           />
@@ -869,9 +869,9 @@
                     overturntypenew="0"
                     copyindex="16"
                     style="
-                      left: 0.64rem;
+                      left: 0.84rem;
                       top: 70.7776rem;
-                      width: 8.72rem;
+                      width: 82%;
                       height: 5.70667rem;
                       transform: rotate(0deg);
                     "
@@ -903,7 +903,7 @@
                             style="
                               opacity: 1;
                               top: -1.83px;
-                              width: 327px;
+                              width: 100%;
                               height: 217.68px;
                             "
                           />
@@ -2688,9 +2688,9 @@
                     overturntypenew="0"
                     copyindex="49"
                     style="
-                      left: -0.10667rem;
+                      left: 0;
                       top: 107.967rem;
-                      width: 10.2133rem;
+                      width: 100%;
                       height: 5.33333rem;
                       transform: rotate(0deg);
                     "
@@ -2723,7 +2723,7 @@
                               opacity: 1;
                               left: -0.227px;
                               height: 200px;
-                              width: 383.453px;
+                              width: 100%;
                             "
                           />
                         </div>
@@ -3257,9 +3257,9 @@
                     imgmattinginfo="[object Object]"
                     overturntypenew="0"
                     style="
-                      left: -0.10667rem;
+                      left: 0;
                       top: 138.179rem;
-                      width: 10.2133rem;
+                      width: 100%;
                       height: 17.2533rem;
                       transform: rotate(0deg);
                     "
@@ -3292,7 +3292,7 @@
                             style="
                               opacity: 1;
                               top: -0.53px;
-                              width: 383px;
+                              width: 100%;
                               height: 648.024px;
                             "
                           />
@@ -3645,9 +3645,9 @@
                     imgmattinginfo="[object Object]"
                     overturntypenew="0"
                     style="
-                      left: -0.10667rem;
+                      left: 0;
                       top: 102.66rem;
-                      width: 10.2133rem;
+                      width: 100%;
                       height: 5.33333rem;
                       transform: rotate(0deg);
                     "
@@ -3680,7 +3680,7 @@
                               opacity: 1;
                               left: -0.227px;
                               height: 200px;
-                              width: 383.453px;
+                              width: 100%;
                             "
                           />
                         </div>
@@ -3852,7 +3852,7 @@
                     style="
                       left: 0rem;
                       top: 138.311rem;
-                      width: 10rem;
+                      width: 100%;
                       height: auto;
                       transform: rotate(0deg);
                     "
@@ -4290,7 +4290,7 @@
                     class="page-bg nobg"
                     style="
                       background-color: rgb(255, 255, 255);
-                      background-image: url('img/2019-09-26_5d8c54cda4d5d.jpeg?imageMogr2/format/webp');
+                      background-image: url('');
                     "
                   ></div>
                 </div>
@@ -4988,7 +4988,7 @@
       });
 
       function checkDevice() {
-        if ($(window).width() <= 980) {
+        if (isPhoneOnly()) {
           if ($("#iframe-view").length > 0)
             $.get("temp.html", function (data) {
               document.open();
@@ -5084,6 +5084,19 @@
           .always(function () {
             $("#main-loader").css("visibility", "hidden"); // Hide loader after request
           });
+      }
+
+      function isPhoneOnly() {
+        const userAgent = navigator.userAgent;
+        const isMobile =
+          /Mobi|Android|iPhone|iPod|Windows Phone|BlackBerry/i.test(userAgent);
+        const isTablet =
+          /iPad|Tablet|PlayBook|Nexus 7|Nexus 10|SM-T|GT-P|Kindle|Silk/i.test(
+            userAgent
+          );
+        const screenWidth = window.innerWidth / window.devicePixelRatio;
+
+        return isMobile && !isTablet && screenWidth <= 600;
       }
     </script>
   </body>

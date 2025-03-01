@@ -37,7 +37,7 @@
       });
 
       function checkDevice() {
-        if ($(window).width() <= 980) {
+        if (isPhoneOnly()) {
           if ($("#iframe-view").length > 0)
             $.get("main.html", function (data) {
               document.open();
@@ -52,6 +52,19 @@
               document.close();
             });
         }
+      }
+
+      function isPhoneOnly() {
+        const userAgent = navigator.userAgent;
+        const isMobile =
+          /Mobi|Android|iPhone|iPod|Windows Phone|BlackBerry/i.test(userAgent);
+        const isTablet =
+          /iPad|Tablet|PlayBook|Nexus 7|Nexus 10|SM-T|GT-P|Kindle|Silk/i.test(
+            userAgent
+          );
+        const screenWidth = window.innerWidth / window.devicePixelRatio;
+
+        return isMobile && !isTablet && screenWidth <= 600;
       }
     </script>
   </body>
