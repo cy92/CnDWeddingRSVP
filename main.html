@@ -4263,7 +4263,7 @@
                     <div class="fs-tit">
                       <span class="require">*</span>
                       <span class="fs-cont" id="select_val"
-                        >Able to attend? / 可以出席?</span
+                        >Can attend? / 可以出席?</span
                       >
                       <i class="iconfont icon-bofang1"></i>
                       <select class="f-real" id="attend_select">
@@ -4938,7 +4938,7 @@
       $("#attend_select").on("change", function () {
         if ($(this).val() !== undefined) {
           if ($(this).val() === "") {
-            $("#select_val").text("Able to attend? / 可以出席?");
+            $("#select_val").text("Can attend? / 可以出席?");
           } else {
             $("#select_val").text($(this).val());
           }
