@@ -5009,46 +5009,66 @@
         const maxScroll = -6300;
         let lastY = 0;
         let velocityY = 0;
+        let isDragging = false;
+
         gsap.to(".scroll-long", {
           scrollTrigger: ".scroll-long",
           y: maxScroll,
           duration: 230,
           ease: "power2.out",
         });
-        Draggable.create(".scroll-long", {
+
+        const draggable = Draggable.create(".scroll-long", {
           type: "y",
-          bounds: ".page-wrap",
+          bounds: { minY: maxScroll, maxY: 0 },
           onDragStart: function () {
-            astY = gsap.getProperty(".scroll-long", "y");
+            isDragging = true;
+            velocityY = 0;
+            lastY = gsap.getProperty(".scroll-long", "y");
           },
           onDrag: function () {
             let currentY = gsap.getProperty(".scroll-long", "y");
             velocityY = currentY - lastY;
             lastY = currentY;
-
-            if (currentY > maxScroll) {
-              gsap.set(".scroll-long", { y: currentY + this.deltaY });
-            } else {
-              gsap.set(".scroll-long", { y: maxScroll });
-              this.endDrag();
-            }
           },
           onDragEnd: function () {
-            let currentY = gsap.getProperty(".scroll-long", "y");
-
-            gsap.to(".scroll-long", {
-              y: Math.max(currentY + velocityY * 5, maxScroll),
-              duration: 1.2,
-              ease: "power2.out",
-              onUpdate: function () {
-                let newY = gsap.getProperty(".scroll-long", "y");
-                if (newY < maxScroll) {
-                  gsap.set(".scroll-long", { y: maxScroll });
-                }
-              },
-            });
+            isDragging = false;
+            applyMomentumAndExtraMovement();
           },
-        });
+        })[0];
+
+        function applyMomentumAndExtraMovement() {
+          let currentY = gsap.getProperty(".scroll-long", "y");
+          let momentum = velocityY * 8;
+          let overshoot = 100;
+          let finalY = Math.max(currentY + momentum + overshoot, maxScroll);
+
+          gsap.to(".scroll-long", {
+            y: finalY,
+            duration: 1.5,
+            ease: "power3.out",
+            onUpdate: function () {
+              let newY = gsap.getProperty(".scroll-long", "y");
+
+              if (isDragging) {
+                gsap.killTweensOf(".scroll-long");
+              }
+
+              if (newY < maxScroll) {
+                gsap.set(".scroll-long", { y: maxScroll });
+              }
+            },
+            onComplete: function () {
+              gsap.to(".scroll-long", {
+                y: finalY - 50,
+                duration: 0.6,
+                ease: "power2.out",
+                yoyo: true,
+                repeat: 1,
+              });
+            },
+          });
+        }
       }
 
       function sendRequest() {
