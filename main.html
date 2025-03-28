@@ -4902,7 +4902,7 @@
         gsap.registerPlugin(ScrollTrigger, Draggable, ScrollToPlugin);
         audio = document.getElementById("my-audio");
 
-        $(document).one("click", function () {
+        $(document).one("click touchstart touchend", function () {
           audio.muted = false;
           audio.play();
           $("#audio").trigger("click");
@@ -5010,6 +5010,7 @@
         let lastY = 0;
         let velocityY = 0;
         let isDragging = false;
+        let velocitySmoothing = 0.5;
 
         gsap.to(".scroll-long", {
           scrollTrigger: ".scroll-long",
@@ -5025,10 +5026,14 @@
             isDragging = true;
             velocityY = 0;
             lastY = gsap.getProperty(".scroll-long", "y");
+            gsap.killTweensOf(".scroll-long");
           },
           onDrag: function () {
             let currentY = gsap.getProperty(".scroll-long", "y");
-            velocityY = currentY - lastY;
+            let rawVelocity = currentY - lastY;
+            velocityY =
+              velocityY * velocitySmoothing +
+              rawVelocity * (1 - velocitySmoothing);
             lastY = currentY;
           },
           onDragEnd: function () {
@@ -5040,13 +5045,14 @@
         function applyMomentumAndExtraMovement() {
           let currentY = gsap.getProperty(".scroll-long", "y");
           let momentum = velocityY * 8;
-          let overshoot = 100;
+          let overshoot = Math.min(Math.abs(momentum * 0.3), 40);
           let finalY = Math.max(currentY + momentum + overshoot, maxScroll);
+          let duration = Math.min(5, Math.abs(momentum * 0.02));
 
           gsap.to(".scroll-long", {
             y: finalY,
-            duration: 1.5,
-            ease: "power3.out",
+            duration: duration,
+            ease: "power4.out",
             onUpdate: function () {
               let newY = gsap.getProperty(".scroll-long", "y");
 
@@ -5059,13 +5065,16 @@
               }
             },
             onComplete: function () {
-              gsap.to(".scroll-long", {
-                y: finalY - 50,
-                duration: 0.6,
+              let bounceAmount = Math.max(10, Math.abs(momentum * 0.15));
+              if (bounceAmount > 40) bounceAmount = 40;
+
+              /*gsap.to(".scroll-long", {
+                y: finalY - bounceAmount,
+                duration: 0.8,
                 ease: "power2.out",
                 yoyo: true,
                 repeat: 1,
-              });
+              });*/
             },
           });
         }
