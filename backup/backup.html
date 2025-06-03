@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Chun Yong ❤️ Daphne PJ Wedding Invitation</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/view.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="view-bg-cont">
+      <div class="view-center">
+        <div>
+          <div class="main-left">
+            <div class="qj">
+              <div class="qj-title">
+                Chun Yong ❤️ Daphne PJ Wedding Invitation
+              </div>
+              <iframe
+                src="main.html"
+                width="375"
+                height="603"
+                id="iframe-view"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        checkDevice();
+        $(window).resize(checkDevice);
+      });
+
+      function checkDevice() {
+        if (isPhoneOnly()) {
+          if ($("#iframe-view").length > 0)
+            $.get("main.html", function (data) {
+              document.open();
+              document.write(data);
+              document.close();
+            });
+        } else {
+          if ($("#iframe-view").length == 0)
+            $.get("index.html", function (data) {
+              document.open();
+              document.write(data);
+              document.close();
+            });
+        }
+      }
+
+      function isPhoneOnly() {
+        const userAgent = navigator.userAgent;
+        const isMobile =
+          /Mobi|Android|iPhone|iPod|Windows Phone|BlackBerry/i.test(userAgent);
+        const isTablet =
+          /iPad|Tablet|PlayBook|Nexus 7|Nexus 10|SM-T|GT-P|Kindle|Silk/i.test(
+            userAgent
+          );
+        const screenWidth = window.innerWidth / window.devicePixelRatio;
+
+        return isMobile && !isTablet && screenWidth <= 600;
+      }
+    </script>
+  </body>
+</html>
